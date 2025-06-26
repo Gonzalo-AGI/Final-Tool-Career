@@ -147,7 +147,7 @@ function drawTicks() {
 
 function updateHighestScoreSummary() {
   const values = radialInputs.map(inp => parseInt(inp.value, 10));
-  const labels = ['Communication Mastery', 'Emotional Control', 'Conflict Precision', 'Speaking & Presence', 'Process Execution', 'Leadership Impact', 'Strategic Operating'];
+  const labels = ['Domoinio de comunicaion', 'Control Emocional', 'Precision en conflictos', 'Habla y Presencia', 'Ejecucion de Procesos', 'Impacto de liderazgo', 'Operacion estrategica'];
   const minValue = Math.min(...values);
   const minIndexes = values.map((v, i) => v === minValue ? i : -1).filter(i => i !== -1);
   const lowLabels = minIndexes.map(i => labels[i]).join(', ');
@@ -156,7 +156,7 @@ function updateHighestScoreSummary() {
   document.getElementById('top-skill-percent').textContent = `${percent}%`;
   const label = document.querySelector('#highest-score-summary div');
   if (label) {
-    label.innerHTML = `Lowest Score: <span id="top-skill-name">${lowLabels}</span> (<span id="top-skill-percent">${percent}%</span>)`;
+    label.innerHTML = `Mejoremos en: <span id="top-skill-name">${lowLabels}</span> (<span id="top-skill-percent">${percent}%</span>)`;
   }
   if (minIndexes.length > 0) {
     showLowestSkillCard(minIndexes[0]);
@@ -166,65 +166,65 @@ function updateHighestScoreSummary() {
 function showLowestSkillCard(index) {
   const cardData = [
     {
-      title: 'Communication Mastery',
+      title: 'Domoinio de comunicaion',
       bullets: [
-        'If they’re really influencing',
-        'If they adapt to different personalities',
-        'How much power their communication actually carries'
+        'Si realmente están influyendo',
+        'Si se adaptan a diferentes personalidades',
+        'Cuánto poder lleva realmente su comunicación'
       ],
       url: 'https://www.adrianagallardo.com/pages/communication-mastery'
     },
     {
-      title: 'Emotional Control',
+      title: 'Control Emocional',
       bullets: [
-        'Their go-to emotional pattern',
-        'How they lead under pressure',
-        'Where emotional leakage costs them power'
+        'Su patrón emocional habitual',
+        'Cómo lideran bajo presión',
+        'Dónde el escape emocional les cuesta poder'
       ],
       url: 'https://www.adrianagallardo.com/pages/emotional-control-1'
     },
     {
-      title: 'Conflict Precision',
+      title: 'Precision en conflictos',
       bullets: [
-        'Avoidance patterns',
-        'Leadership hesitation',
-        'How they handle tension and truth'
+        'Patrones de evitación',
+        'Hesitación en el liderazgo',
+        'Cómo manejan la tensión y la verdad'
       ],
       url: 'https://www.adrianagallardo.com/pages/conflict-resolution'
     },
     {
-      title: 'Speaking & Presence',
+      title: 'Habla y Presencia',
       bullets: [
-        'Their actual presence and authority',
-        'Whether they own the room or disappear',
-        'Impact in group settings or high-stakes conversations'
+        'Su presencia y autoridad reales',
+        'Si dominan la habitación o desaparecen',
+        'Impacto en situaciones grupales o conversaciones de alto nivel'
       ],
       url: 'https://www.adrianagallardo.com/pages/public-speaking'
     },
     {
-      title: 'Process Execution',
+      title: 'Ejecucion de Procesos',
       bullets: [
-        'Operational inefficiencies',
-        'Lack of structure or documentation',
-        'Bottlenecks they’re tolerating'
+        'Ineficiencias Operativas',
+        'Falta de estructura o documentación',
+        'Cuellos de botella que están tolerando'
       ],
       url: 'https://www.adrianagallardo.com/pages/creation-execution'
     },
     {
-      title: 'Leadership Impact',
+      title: 'Impacto de liderazgo',
       bullets: [
-        'True influence',
-        'Culture by presence',
-        'Leadership beyond task management'
+        'Influencia verdadera',
+        'Cultura a través de la presencia',
+        'Liderazgo más allá de la gestión de tareas'
       ],
       url: 'https://www.adrianagallardo.com/pages/leadership'
     },
     {
-      title: 'Strategic Operating',
+      title: 'Operacion estrategica',
       bullets: [
-        'Lack of strategic decision-making',
-        'Symptom-solving vs system-solving',
-        'How they prioritize and lead big-picture'
+        'Falta de toma de decisiones estratégicas',
+        'Resolver síntomas en lugar de resolver sistemas',
+        'Cómo priorizan y lideran con una visión global'
       ],
       url: 'https://www.adrianagallardo.com/pages/strategic-thinking'
     }
@@ -240,7 +240,7 @@ function showLowestSkillCard(index) {
     ${card.bullets.map(b => `<li>${b}</li>`).join('')}
     <li style="margin-top: 12px; list-style: none;">
       <a href="${card.url}" target="_blank" style="display: inline-block; background: #007bff; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600;">
-        Learn More →
+        Aprende mas →
       </a>
     </li>
   `;
